@@ -1,0 +1,30 @@
+<h3>Uredi Materijal</h3>
+
+<%= simple_form_for @material, html: {class: 'form-horizontal'} do |f| %>
+    <%= f.input :title, label: "Naziv" %>
+
+    <%= f.input :title_eng, label: "Naziv na Engleskom" %>
+
+    <%= f.input :avatar, label: "Slika" , as: :file %>
+
+    <div class="input-group" style="margin-bottom: 10px; margin-top: 30px;">
+      <span class="input-group-addon">
+         <%= f.check_box :has_colors, label: false, type: "checkbox" %>
+      </span>
+      <%= f.label "Filter za boju?", type: "text", class: "form-control" %>
+    </div>
+
+    <div class="input-group" style="margin-bottom: 10px; margin-top: 30px;">
+      <span class="input-group-addon">
+         <%= f.check_box :has_types, label: false, type: "checkbox" %>
+      </span>
+      <%= f.label "Filter za tip?", type: "text", class: "form-control" %>
+    </div>
+
+
+    <%= f.label "Kategorije" %>
+    <%= f.association :categories, label: false, collection: Category.all, multiple: true, :include_blank => true, :input_html => {class: 'chosen-select'} %>
+    <%= f.button :submit, "Izmijeni Materijal" %>
+    <%= link_to "Cancel", material_path(f.object.id), class: "btn btn-default" %>
+
+<% end %>

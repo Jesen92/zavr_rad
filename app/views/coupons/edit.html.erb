@@ -1,0 +1,15 @@
+<h3>Uredi Kupon</h3>
+
+<%= simple_form_for @coupon, html: {class: 'form-horizontal'} do |f| %>
+    <%= f.input :code, label: "Kod kupona" %>
+
+    <%= f.input :discount, label: "Popust(%)" %>
+
+    <%= f.label "Artikl" %>
+    <%= f.input :article_id, label: false ,collection: Article.all , input_html: {class: 'chosen-select'} %>
+    <p>Ako se ne odabere artikl, kupon će služiti za cijelu narudžbu.</p>
+
+    <%= f.button :submit, "Izradi kupon" %>
+    <%= link_to "Cancel", coupon_path(f.object.id), class: "btn btn-default" %>
+
+<% end %>

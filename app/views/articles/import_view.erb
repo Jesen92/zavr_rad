@@ -1,0 +1,14 @@
+<div class="page-header head-page">
+  <h1>Uvezite CSV tablicu</h1>
+</div>
+
+<!--    <%= form_tag import_articles_path, multipart: true do %>
+      <%= file_field_tag :file %>
+
+    <% end %>-->
+
+<%= simple_form_for @csv, url: import_articles_path, html: {class: 'form-horizontal', multipart: true} do |form| %>
+    <%= form.input :document, as: :file %>
+
+    <%= form.submit "Uvezi CSV", class:"btn btn-success" %>
+<% end %>

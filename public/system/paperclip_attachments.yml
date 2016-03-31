@@ -1,0 +1,40 @@
+---
+:Category:
+  :avatar:
+  - :table
+  - :thumb
+:Color:
+  :avatar:
+  - :table
+  - :thumb
+:HomeBanner:
+  :image:
+  - :bann
+:Material:
+  :avatar:
+  - :index
+  - :table
+  - :thumb
+:Picture:
+  :image:
+  - :gallery
+  - :index
+  - :original
+  - :picture
+  - :show
+  - :table
+  - :thumb
+  - :thumbgal
+:ShopBanner:
+  :image:
+  - :bann
+  - :bannsm
+:Ssubcategory:
+  :avatar:
+  - :table
+  - :thumb
+:Subcategory:
+  :avatar:
+  - :index
+  - :table
+  - :thumb
